@@ -59,7 +59,6 @@ public class BatmanMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log("Normal Mode.");
             currentState = BatmanState.Normal;
             normalSpeed = 5f;
         }
@@ -78,17 +77,14 @@ public class BatmanMovement : MonoBehaviour
     {
         if (currentState == BatmanState.Normal)
         {
-            Debug.Log("Normal Mode.");
             _lightController.SetActive(false);
             _speedCoefficient = 1.0f;
         } else if (currentState == BatmanState.Alert)
         {
-            Debug.Log("Alert Mode.");
             _lightController.SetActive(true);
             _speedCoefficient = 1.0f;
         } else
         {
-            Debug.Log("Stealth Mode.");
             _speedCoefficient = 0.5f;
         }
     }
